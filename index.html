@@ -2,156 +2,178 @@
 <html lang="en" class="bg-white text-gray-800">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Piyush Warole | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Piyush Warole - Portfolio, Education, Goals, Achievements" />
+  <meta name="author" content="Piyush Warole" />
+  <meta property="og:title" content="Piyush Warole | Portfolio" />
+  <meta property="og:image" content="https://example.com/preview-image.jpg" />
+  <meta property="og:description" content="Personal introduction portfolio site." />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="icon" href="favicon.ico" />
+  <title>Piyush Warole | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    #spinner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: white;
+    }
+    .hidden { display: none !important; }
+  </style>
 </head>
 <body class="font-sans transition-all">
 
-<!-- Header Section -->
-<header class="bg-gray-900 text-white shadow-md">
-  <div class="container mx-auto flex justify-between items-center p-4">
-    <h1 class="text-xl font-bold">Piyush Warole</h1>
-    <nav>
-      <ul class="flex space-x-4">
-        <li><a href="#welcome" class="hover:text-blue-400">Home</a></li>
-        <li><a href="#about" class="hover:text-blue-400">About</a></li>
-        <li><a href="#achievements" class="hover:text-blue-400">Achievements</a></li>
-        <li><a href="#goals" class="hover:text-blue-400">Goals</a></li>
-        <li><a href="#personal" class="hover:text-blue-400">Personal</a></li>
-        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
-      </ul>
-    </nav>
+  <!-- ✅ Loading Spinner -->
+  <div id="spinner">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-4 border-pink-500"></div>
   </div>
-</header>
 
-<!-- Welcome Section -->
-<section id="welcome" class="p-8 text-center bg-gradient-to-r from-blue-100 to-purple-200">
-  <img src="profile.png.jpg" alt="Your Pic" class="mx-auto rounded-full w-32 h-32 mb-4" />
-  <h1 class="text-3xl font-bold">Welcome to My Portfolio!</h1>
-  <p class="mt-2">Excited to share my journey, passions, and goals with you.</p>
-  <video controls class="mx-auto mt-4 rounded shadow-md w-full max-w-md">
-    <source src="video.mp3" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-</section>
+  <main class="hidden" id="main-content">
 
-<!-- About Me -->
-<section id="about" class="p-8 bg-white">
-  <h2 class="text-2xl font-semibold mb-4">About Me</h2>
-  <ul class="space-y-2">
-    <li><strong>Name:</strong> Piyush Warole</li>
-    <li><strong>Location:</strong> Dahanu, Palghar</li>
-    <li><strong>Education:</strong> B.Tech, Electronics Computer Science, St John College</li>
-    <li><strong>Languages:</strong> English, Hindi, Marathi</li>
-  </ul>
-</section>
+    <!-- ✅ Navbar -->
+    <header class="bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md fixed top-0 left-0 w-full z-50">
+      <div class="container mx-auto flex justify-between items-center p-4">
+        <h1 class="text-xl font-bold">Piyush Warole</h1>
+        <button id="menu-btn" class="md:hidden focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+        <nav id="nav-menu" class="hidden md:flex flex-col md:flex-row md:items-center space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0 absolute md:static bg-pink-600 w-full md:w-auto left-0 top-16 md:top-auto z-10 md:bg-transparent">
+          <a href="#welcome" class="block px-4 py-2 hover:text-yellow-300 transition">Home</a>
+          <a href="#about" class="block px-4 py-2 hover:text-yellow-300 transition">About</a>
+          <a href="#achievements" class="block px-4 py-2 hover:text-yellow-300 transition">Achievements</a>
+          <a href="#goals" class="block px-4 py-2 hover:text-yellow-300 transition">Goals</a>
+          <a href="#personal" class="block px-4 py-2 hover:text-yellow-300 transition">Personal</a>
+          <a href="#contact" class="block px-4 py-2 hover:text-yellow-300 transition">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-<!-- Achievements (loaded via JS) -->
-<section id="achievements" class="p-8 bg-gray-100">
-  <h2 class="text-2xl font-semibold mb-4">Achievements</h2>
-  <ul id="achievement-list" class="list-disc pl-5"></ul>
-</section>
+    <!-- ✅ Welcome Section -->
+    <section id="welcome" class="pt-24 p-8 text-center bg-gradient-to-r from-yellow-100 to-pink-200 min-h-[80vh]">
+      <img src="piy.jpg" alt="Profile picture of Piyush Warole"
+           class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg" loading="lazy" />
+      <h1 class="text-4xl font-bold text-pink-700">Welcome to My Portfolio!</h1>
+      <p class="mt-2 text-lg text-gray-700">Excited to share my journey, passions, and goals with you.</p>
+      <video controls class="mx-auto mt-4 rounded shadow-md w-full max-w-md" loading="lazy">
+        <source src="f1vdo.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
 
-<!-- Goals -->
-<section id="goals" class="p-8 bg-white">
-  <h2 class="text-2xl font-semibold mb-4">Future Goals</h2>
-  <p>I aspire to become a tech entrepreneur focused on education and sustainability...</p>
-</section>
+    <!-- ✅ About -->
+    <section id="about" class="p-8 bg-white">
+      <h2 class="text-3xl font-semibold mb-4 text-pink-600">About Me</h2>
+      <ul class="space-y-2 text-lg">
+        <li><strong>Name:</strong> Piyush Warole</li>
+        <li><strong>Location:</strong> Dahanu, Palghar</li>
+        <li><strong>Education:</strong> B.Tech, Electronics Computer Science, St John College</li>
+        <li><strong>Languages:</strong> English, Hindi, Marathi</li>
+      </ul>
+    </section>
 
-<!-- Personal Side -->
-<section id="personal" class="p-8 bg-gray-100">
-  <h2 class="text-2xl font-semibold mb-4">My Personal Side</h2>
+    <!-- ✅ Achievements -->
+    <section id="achievements" class="p-8 bg-gray-100">
+      <h2 class="text-3xl font-semibold mb-4 text-purple-600">Achievements</h2>
+      <ul id="achievement-list" class="list-disc pl-5 space-y-1 text-lg">
+        <!-- Add dynamically or static achievements here -->
+        <li>Top 10 in Hackathon 2024</li>
+        <li>3rd Place - College Project Expo</li>
+      </ul>
+    </section>
 
-  <h3 class="font-bold">Hobbies</h3>
-  <ul id="hobby-list" class="list-disc pl-5 mb-4"></ul>
+    <!-- ✅ Goals -->
+    <section id="goals" class="p-8 bg-white">
+      <h2 class="text-3xl font-semibold mb-4 text-blue-600">Future Goals</h2>
+      <p class="text-lg">I aspire to become a tech entrepreneur focused on education and sustainability, solving real-world problems with digital innovation.</p>
+    </section>
 
-  <h3 class="font-bold">Role Models</h3>
-  <ul class="list-disc pl-5 mb-4">
-    <li>Elon Musk – Visionary Innovation</li>
-    <li>Michael Phelps – Discipline & Dedication</li>
-  </ul>
+    <!-- ✅ Personal -->
+    <section id="personal" class="p-8 bg-gray-100">
+      <h2 class="text-3xl font-semibold mb-4 text-green-600">My Personal Side</h2>
+      <h3 class="font-bold text-lg">Hobbies</h3>
+      <ul id="hobby-list" class="list-disc pl-5 mb-4 space-y-1 text-lg">
+        <li>Coding</li>
+        <li>Swimming</li>
+        <li>Reading</li>
+      </ul>
+      <h3 class="font-bold text-lg">Role Models</h3>
+      <ul class="list-disc pl-5 mb-4 space-y-1 text-lg">
+        <li>Elon Musk – Visionary Innovation</li>
+        <li>Michael Phelps – Discipline & Dedication</li>
+      </ul>
+      <h3 class="font-bold text-lg">Books & Startups</h3>
+      <ul class="list-disc pl-5 space-y-1 text-lg">
+        <li><strong>Book:</strong> Deep Work – Cal Newport</li>
+        <li><strong>Site:</strong> <a href="https://ted.com" class="text-blue-500 underline hover:text-blue-700 transition" target="_blank" rel="noopener noreferrer">TED.com</a></li>
+        <li><strong>Startup:</strong> Notion</li>
+      </ul>
+    </section>
 
-  <h3 class="font-bold">Books & Startups</h3>
-  <ul class="list-disc pl-5">
-    <li><strong>Book:</strong> Deep Work – Cal Newport</li>
-    <li><strong>Site:</strong> <a href="https://ted.com" class="text-blue-500" target="_blank">TED.com</a></li>
-    <li><strong>Startup:</strong> Notion</li>
-  </ul>
-</section>
+    <!-- ✅ GitHub -->
+    <section id="github" class="p-8 bg-white">
+      <h2 class="text-3xl font-semibold mb-4 text-indigo-600">My GitHub Repositories</h2>
+      <ul id="github-repos" class="list-disc pl-5 space-y-1 text-lg">
+        <!-- Example static content -->
+        <li><a href="https://github.com/piyush-warole/project-1" target="_blank" class="text-blue-600 hover:underline">Project 1</a></li>
+        <li><a href="https://github.com/piyush-warole/project-2" target="_blank" class="text-blue-600 hover:underline">Project 2</a></li>
+      </ul>
+    </section>
 
-<!-- Public API Section -->
-<section id="github" class="p-8 bg-white">
-  <h2 class="text-2xl font-semibold mb-4">My GitHub Repositories</h2>
-  <ul id="github-repos" class="list-disc pl-5"></ul>
-</section>
+    <!-- ✅ Contact -->
+    <section id="contact" class="p-8 bg-gray-100">
+      <h2 class="text-3xl font-semibold mb-4 text-pink-600">Contact Me</h2>
+      <ul class="mb-4 space-y-2 text-lg">
+        <li><a href="tel:+919999999999" class="text-blue-600 hover:underline">📞 +91 99999 99999</a></li>
+        <li><a href="https://wa.me/919999999999" class="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">💬 WhatsApp Chat</a></li>
+        <li><a href="mailto:piyush@example.com" class="text-red-600 hover:underline">📧 piyush@example.com</a></li>
+        <li>
+          📍 My Location:
+          <iframe src="https://www.google.com/maps/embed?...yourmap..." class="w-full h-64 border mt-2" loading="lazy"></iframe>
+        </li>
+      </ul>
+      <h3 class="font-bold mb-2 text-lg">Send Me a Message</h3>
+      <form action="https://formspree.io/f/xzzrwlwb" method="POST" class="space-y-2">
+        <input type="text" name="name" placeholder="Your Name" class="w-full border p-2 rounded" required />
+        <input type="email" name="email" placeholder="Your Email" class="w-full border p-2 rounded" required />
+        <textarea name="message" placeholder="Your Message" class="w-full border p-2 rounded" required></textarea>
+        <button type="submit" class="bg-pink-500 text-white px-4 py-2 rounded hover:bg-pink-600 transition">Send</button>
+      </form>
+    </section>
 
-<!-- Contact Section -->
-<section id="contact" class="p-8 bg-gray-100">
-  <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
-  <ul class="mb-4 space-y-2">
-    <li><a href="tel:+919999999999" class="text-blue-600">📞 +91 99999 99999</a></li>
-    <li><a href="https://wa.me/919999999999" class="text-green-600" target="_blank">💬 WhatsApp Chat</a></li>
-    <li><a href="mailto:piyush@example.com" class="text-red-600">📧 piyush@example.com</a></li>
-    <li>
-      📍 My Location:
-      <iframe src="https://www.google.com/maps/embed?...yourmap..." class="w-full h-64 border mt-2" loading="lazy"></iframe>
-    </li>
-  </ul>
+    <!-- ✅ Footer -->
+    <footer class="bg-gray-900 text-white text-center p-4 mt-10">
+      <p>Connect with me:
+        <a href="https://linkedin.com/in/piyush-warole" class="underline text-blue-300 hover:text-blue-500 transition" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+        <a href="https://github.com/piyush-warole" class="underline text-blue-300 hover:text-blue-500 transition" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </p>
+      <p>© 2025 Piyush Warole</p>
+    </footer>
 
-  <h3 class="font-bold mb-2">Send Me a Message</h3>
-  <form action="https://formspree.io/f/your-id" method="POST" class="space-y-2">
-    <input type="text" name="name" placeholder="Your Name" class="w-full border p-2 rounded" required />
-    <input type="email" name="email" placeholder="Your Email" class="w-full border p-2 rounded" required />
-    <textarea name="message" placeholder="Your Message" class="w-full border p-2 rounded" required></textarea>
-    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Send</button>
-  </form>
-</section>
+    <!-- ✅ Scroll to Top -->
+    <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+            aria-label="Scroll to top"
+            class="fixed bottom-16 right-4 bg-pink-500 text-white p-2 rounded-full shadow-lg hover:bg-pink-600 transition">
+      ⬆️
+    </button>
+  </main>
 
-<!-- Footer -->
-<footer class="bg-gray-900 text-white text-center p-4">
-  <p>Connect with me:
-    <a href="https://linkedin.com/in/piyush-warole" class="underline text-blue-300">LinkedIn</a> |
-    <a href="https://github.com/piyush-warole" class="underline text-blue-300">GitHub</a>
-  </p>
-  <p>© 2025 Piyush Warole</p>
-</footer>
-
-<!-- Toggle Dark Mode -->
-<div class="fixed bottom-4 right-4">
-  <button onclick="document.documentElement.classList.toggle('dark')" class="bg-gray-200 dark:bg-gray-800 text-black dark:text-white p-2 rounded shadow">
-    🌓 Toggle Theme
-  </button>
-</div>
-
-<!-- Scripts -->
-<script>
-  // Load Achievements & Hobbies from JSON
-  fetch('data.json')
-    .then(res => res.json())
-    .then(data => {
-      const achievementList = document.getElementById('achievement-list');
-      data.achievements.forEach(item => {
-        achievementList.innerHTML += `<li>${item}</li>`;
-      });
-
-      const hobbyList = document.getElementById('hobby-list');
-      data.hobbies.forEach(hobby => {
-        hobbyList.innerHTML += `<li>${hobby}</li>`;
-      });
+  <!-- ✅ JS for Spinner & Navbar Toggle -->
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("spinner").classList.add("hidden");
+      document.getElementById("main-content").classList.remove("hidden");
     });
 
-  // Load GitHub Repos
-  fetch('https://api.github.com/users/piyush-warole/repos')
-    .then(res => res.json())
-    .then(repos => {
-      const list = document.getElementById('github-repos');
-      repos.forEach(repo => {
-        list.innerHTML += `<li><a href="${repo.html_url}" target="_blank">${repo.name}</a></li>`;
-      });
+    document.getElementById("menu-btn").addEventListener("click", () => {
+      const nav = document.getElementById("nav-menu");
+      nav.classList.toggle("hidden");
     });
-</script>
-
+  </script>
 </body>
 </html>
+
