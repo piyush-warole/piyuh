@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-white text-gray-800">
+<html lang="en" class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +12,11 @@
   <link rel="icon" href="favicon.ico" />
   <title>Piyush Warole | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
   <style>
     #spinner {
       display: flex;
@@ -36,6 +41,12 @@
     <header class="bg-gradient-to-r from-pink-500 to-purple-500 text-white shadow-md fixed top-0 left-0 w-full z-50">
       <div class="container mx-auto flex justify-between items-center p-4">
         <h1 class="text-xl font-bold">Piyush Warole</h1>
+        <div class="flex items-center gap-2">
+          <label class="cursor-pointer flex items-center">
+            <span class="mr-2">🌞/🌙</span>
+            <input type="checkbox" id="theme-toggle" class="toggle toggle-sm toggle-accent" />
+          </label>
+        </div>
         <button id="menu-btn" class="md:hidden focus:outline-none">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -55,18 +66,19 @@
 
     <!-- ✅ Welcome Section -->
     <section id="welcome" class="pt-24 p-8 text-center bg-gradient-to-r from-yellow-100 to-pink-200 min-h-[80vh]">
-      <img src="piy.jpg" alt="Profile picture of Piyush Warole"
-           class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg" loading="lazy" />
-      <h1 class="text-4xl font-bold text-pink-700">Welcome to My Portfolio!</h1>
-      <p class="mt-2 text-lg text-gray-700">Excited to share my journey, passions, and goals with you.</p>
-      <video controls class="mx-auto mt-4 rounded shadow-md w-full max-w-md" loading="lazy">
-        <source src="f1vdo.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </section>
+  <img src="piy.jpg" alt="Profile picture of Piyush Warole"
+       class="mx-auto rounded-full w-32 h-32 mb-4 shadow-lg" loading="lazy" />
+  <h1 class="text-4xl font-bold text-pink-700">Welcome to My Portfolio!</h1>
+  <p class="mt-2 text-lg text-gray-700 dark:text-gray-200">Excited to share my journey, passions, and goals with you.</p>
+  <video autoplay controls class="mx-auto mt-4 rounded shadow-md w-full max-w-md" loading="lazy">
+    <source src="f1vdo.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  
+</section>
 
     <!-- ✅ About -->
-    <section id="about" class="p-8 bg-white">
+    <section id="about" class="p-8 bg-white dark:bg-gray-800">
       <h2 class="text-3xl font-semibold mb-4 text-pink-600">About Me</h2>
       <ul class="space-y-2 text-lg">
         <li><strong>Name:</strong> Piyush Warole</li>
@@ -77,64 +89,152 @@
     </section>
 
     <!-- ✅ Achievements -->
-    <section id="achievements" class="p-8 bg-gray-100">
+    <section id="achievements" class="p-8 bg-gray-100 dark:bg-gray-700">
       <h2 class="text-3xl font-semibold mb-4 text-purple-600">Achievements</h2>
-      <ul id="achievement-list" class="list-disc pl-5 space-y-1 text-lg">
-        <!-- Add dynamically or static achievements here -->
-        <li>Top 10 in Hackathon 2024</li>
+      <ul class="list-disc pl-5 space-y-1 text-lg">
+        <li>Top 10 in Coding contest 2024</li>
         <li>3rd Place - College Project Expo</li>
+        <li>Internship at MNC </li>
       </ul>
     </section>
 
     <!-- ✅ Goals -->
-    <section id="goals" class="p-8 bg-white">
+    <section id="goals" class="p-8 bg-white dark:bg-gray-800">
       <h2 class="text-3xl font-semibold mb-4 text-blue-600">Future Goals</h2>
-      <p class="text-lg">I aspire to become a tech entrepreneur focused on education and sustainability, solving real-world problems with digital innovation.</p>
+      <p class="text-lg">
+         As an aspiring VLSI engineer, my goal is to contribute to the design and optimization of cutting-edge semiconductor technologies. I aim to specialize in low-power and high-performance chip design to support next-generation computing systems. I'm passionate about staying ahead in emerging trends like AI hardware accelerators and advanced process nodes. My long-term vision is to be part of innovations that shape the future of electronics and microarchitecture.
+</p>
     </section>
 
     <!-- ✅ Personal -->
-    <section id="personal" class="p-8 bg-gray-100">
-      <h2 class="text-3xl font-semibold mb-4 text-green-600">My Personal Side</h2>
-      <h3 class="font-bold text-lg">Hobbies</h3>
-      <ul id="hobby-list" class="list-disc pl-5 mb-4 space-y-1 text-lg">
-        <li>Coding</li>
-        <li>Swimming</li>
-        <li>Reading</li>
-      </ul>
-      <h3 class="font-bold text-lg">Role Models</h3>
-      <ul class="list-disc pl-5 mb-4 space-y-1 text-lg">
-        <li>Elon Musk – Visionary Innovation</li>
-        <li>Michael Phelps – Discipline & Dedication</li>
-      </ul>
-      <h3 class="font-bold text-lg">Books & Startups</h3>
-      <ul class="list-disc pl-5 space-y-1 text-lg">
-        <li><strong>Book:</strong> Deep Work – Cal Newport</li>
-        <li><strong>Site:</strong> <a href="https://ted.com" class="text-blue-500 underline hover:text-blue-700 transition" target="_blank" rel="noopener noreferrer">TED.com</a></li>
-        <li><strong>Startup:</strong> Notion</li>
-      </ul>
-    </section>
+<section id="personal" class="p-8 bg-gray-100 dark:bg-gray-700">
+  <h2 class="text-3xl font-semibold mb-4 text-green-600">My Personal Side</h2>
 
-    <!-- ✅ GitHub -->
-    <section id="github" class="p-8 bg-white">
-      <h2 class="text-3xl font-semibold mb-4 text-indigo-600">My GitHub Repositories</h2>
-      <ul id="github-repos" class="list-disc pl-5 space-y-1 text-lg">
-        <!-- Example static content -->
-        <li><a href="https://github.com/piyush-warole/project-1" target="_blank" class="text-blue-600 hover:underline">Project 1</a></li>
-        <li><a href="https://github.com/piyush-warole/project-2" target="_blank" class="text-blue-600 hover:underline">Project 2</a></li>
-      </ul>
-    </section>
+  <h3 class="font-bold text-lg">Passion</h3>
+  <p class="mb-4 text-lg">
+    I’m deeply passionate about motorsports — from the high-speed thrill of Formula 1 to the agility of MotoGP. 
+    What fascinates me most is the electronics and engineering magic that power these machines to break limits. 
+    From telemetry to track-side tuning, it’s the fusion of tech and speed that fuels my excitement.
+    Racing isn’t just a sport for me; it’s a beautiful showcase of innovation and performance.
+  </p>
+
+  <h3 class="font-bold text-lg">Hobbies</h3>
+  <ul class="list-disc pl-5 mb-4 space-y-1 text-lg">
+    <li>Reverse Engineering Gadgets</li>
+    <li>Reading Personal Development Books</li>
+    <li>Swimming</li>
+  </ul>
+
+  <h3 class="font-bold text-lg">Role Models</h3>
+  <ul class="list-disc pl-5 mb-4 space-y-1 text-lg">
+    <li>Max Verstappen – Relentless Focus & Champion’s Mindset in F1</li>
+    <li>Michael Phelps – Unmatched Discipline & Mental Strength in Olympic Swimming</li>
+  </ul>
+
+  <h3 class="font-bold text-lg">Books & Startups</h3>
+  <ul class="list-disc pl-5 space-y-1 text-lg">
+    <li><strong>Book:</strong> Atomic Habits by James Clear</li>
+    <li><strong>Startup:</strong> ideaForge</li>
+  </ul>
+</section>
+
+
+    
+
+   <!-- ✅ Social Media -->
+<section id="social-media" class="p-8 bg-white dark:bg-gray-800">
+  <h2 class="text-3xl font-semibold mb-4 text-indigo-600">Social Media</h2>
+  <div class="flex space-x-6 text-2xl">
+    <a href="https://www.linkedin.com/in/piyush-warole-1210-wp/" target="_blank" rel="noopener noreferrer" 
+       class="text-blue-700 hover:text-blue-900 transition" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.762 2.239 5 5 5h14c2.762 0 5-2.238 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.25c-.966 0-1.75-.783-1.75-1.75s.784-1.75 1.75-1.75 1.75.783 1.75 1.75-.783 1.75-1.75 1.75zm13.5 11.25h-3v-5.5c0-1.32-1.08-2.4-2.4-2.4s-2.4 1.08-2.4 2.4v5.5h-3v-10h3v1.5c.563-.928 1.73-1.5 2.7-1.5 2.059 0 3.7 1.655 3.7 3.7v6.3z"/>
+      </svg>
+    </a>
+    <a href="https://github.com/piyush-warole/piyuh" target="_blank" rel="noopener noreferrer" 
+       class="text-gray-800 dark:text-gray-200 hover:text-gray-900 dark:hover:text-white transition" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.086 1.84 1.237 1.84 1.237 1.07 1.835 2.807 1.305 3.495.997.108-.775.418-1.305.76-1.605-2.665-.305-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.398 3.003-.404 1.02.006 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.654 1.653.242 2.874.118 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.807 5.624-5.48 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .322.216.694.825.576 4.765-1.587 8.199-6.084 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+      </svg>
+    </a>
+    <a href="https://www.instagram.com/piyush.w1/" target="_blank" rel="noopener noreferrer"
+       class="text-pink-600 hover:text-pink-800 transition" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+        <path d="M16 11.37a4 4 0 1 1-4.73-4.73 4 4 0 0 1 4.73 4.73z"></path>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<section id="testimonials" class="py-20 bg-gradient-to-r from-blue-50 to-white" data-aos="fade-up">
+  <div class="text-center mb-12">
+    <h2 class="text-4xl font-bold">What People Say</h2>
+    <p class="text-lg text-gray-500">Team members and friends  reviews</p>
+  </div>
+
+  <!-- DaisyUI Carousel wrapper -->
+  <div class="carousel w-full max-w-3xl mx-auto rounded-box shadow-xl">
+
+    <!-- Testimonial 1 -->
+    <div id="item1" class="carousel-item w-full flex flex-col items-center p-8 text-center">
+      <p class="text-lg italic mb-4">"An incredible developer—fast, responsive, and detail-oriented."</p>
+      <h3 class="font-bold">— Akshay Marathe, UI-UX Designer</h3>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div id="item2" class="carousel-item w-full flex flex-col items-center p-8 text-center">
+      <p class="text-lg italic mb-4">"Always focused on quality and Improvement "</p>
+      <h3 class="font-bold">— Professor, ECS department</h3>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div id="item3" class="carousel-item w-full flex flex-col items-center p-8 text-center">
+      <p class="text-lg italic mb-4">"Exceptional sporting skills "</p>
+      <h3 class="font-bold">— Hrishi Pandey, Volleyball Club </h3>
+    </div>
+
+  </div>
+
+  <!-- Carousel navigation buttons -->
+  <div class="flex justify-center gap-4 mt-4">
+    <a href="#item1" class="btn btn-xs">1</a>
+    <a href="#item2" class="btn btn-xs">2</a>
+    <a href="#item3" class="btn btn-xs">3</a>
+  </div>
+</section>
+
+
+
 
     <!-- ✅ Contact -->
-    <section id="contact" class="p-8 bg-gray-100">
+    <section id="contact" class="p-8 bg-gray-100 dark:bg-gray-700">
       <h2 class="text-3xl font-semibold mb-4 text-pink-600">Contact Me</h2>
       <ul class="mb-4 space-y-2 text-lg">
-        <li><a href="tel:+919999999999" class="text-blue-600 hover:underline">📞 +91 99999 99999</a></li>
-        <li><a href="https://wa.me/919999999999" class="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">💬 WhatsApp Chat</a></li>
-        <li><a href="mailto:piyush@example.com" class="text-red-600 hover:underline">📧 piyush@example.com</a></li>
+        <li><a href="tel:+91-9607676104" class="text-blue-600 hover:underline">📞 +91 9607676104 </a></li>
+        <li><a href="https://wa.me/919607676104" class="text-green-600 hover:underline" target="_blank" rel="noopener noreferrer">💬 WhatsApp Chat</a></li>
+        <li><a href="mailto:223piyush7001@sjcem.edu.in" class="text-red-600 hover:underline">📧 223piyush7001@sjcem.edu.in</a></li>
         <li>
-          📍 My Location:
-          <iframe src="https://www.google.com/maps/embed?...yourmap..." class="w-full h-64 border mt-2" loading="lazy"></iframe>
-        </li>
+  📍 My Location:
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60310.97307396174!2d72.6961611!3d19.9762991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7220f9fef85ef%3A0x44731fdb44a730ae!2sDahanu%2C%20Maharashtra%20401202!5e0!3m2!1sen!2sin!4v1716374745673!5m2!1sen!2sin"
+    class="w-full h-64 border mt-2 rounded"
+    loading="lazy"
+    style="border:0;"
+    allowfullscreen=""
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+  <a
+    href="https://www.google.com/maps/dir/?api=1&destination=Dahanu,+Palghar,+Maharashtra"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-block mt-2 px-4 py-2 bg-pink-500 text-white rounded hover:bg-pink-600 transition"
+  >
+    Get Directions
+  </a>
+</li>
+
       </ul>
       <h3 class="font-bold mb-2 text-lg">Send Me a Message</h3>
       <form action="https://formspree.io/f/xzzrwlwb" method="POST" class="space-y-2">
@@ -145,15 +245,15 @@
       </form>
     </section>
 
-    <!-- ✅ Footer -->
-    <footer class="bg-gray-900 text-white text-center p-4 mt-10">
-      <p>Connect with me:
-        <a href="https://linkedin.com/in/piyush-warole" class="underline text-blue-300 hover:text-blue-500 transition" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-        <a href="https://github.com/piyush-warole" class="underline text-blue-300 hover:text-blue-500 transition" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </p>
-      <p>© 2025 Piyush Warole</p>
-    </footer>
+    <!-- ✅ Cookie Consent -->
+    <div id="cookie-consent" class="hidden fixed bottom-0 w-full bg-gray-900 text-white p-4 z-50 shadow-lg">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
+        <p class="mb-2 md:mb-0">We use cookies to personalize content and remember preferences.</p>
+        <button id="accept-cookies" class="bg-pink-500 px-4 py-2 rounded hover:bg-pink-600 transition">Accept</button>
+      </div>
+    </div>
 
+    
     <!-- ✅ Scroll to Top -->
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
             aria-label="Scroll to top"
@@ -162,18 +262,58 @@
     </button>
   </main>
 
-  <!-- ✅ JS for Spinner & Navbar Toggle -->
+  <!-- ✅ JavaScript Logic -->
   <script>
     window.addEventListener("load", () => {
       document.getElementById("spinner").classList.add("hidden");
       document.getElementById("main-content").classList.remove("hidden");
+
+      // Scroll to last visited section
+      const lastSection = localStorage.getItem("lastSection");
+      if (lastSection) {
+        const target = document.getElementById(lastSection);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+
+      // Load theme
+      const theme = localStorage.getItem("theme") || "light";
+      document.documentElement.classList.toggle("dark", theme === "dark");
+      document.getElementById("theme-toggle").checked = theme === "dark";
+
+      // Show cookie consent if not accepted
+      if (!document.cookie.includes("cookieConsent=true")) {
+        document.getElementById("cookie-consent").classList.remove("hidden");
+      }
     });
 
+    // Toggle nav menu
     document.getElementById("menu-btn").addEventListener("click", () => {
-      const nav = document.getElementById("nav-menu");
-      nav.classList.toggle("hidden");
+      document.getElementById("nav-menu").classList.toggle("hidden");
+    });
+
+    // Theme toggle
+    document.getElementById("theme-toggle").addEventListener("change", (e) => {
+      const isDark = e.target.checked;
+      document.documentElement.classList.toggle("dark", isDark);
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
+    // Track last section
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", () => {
+        const section = link.getAttribute("href").substring(1);
+        localStorage.setItem("lastSection", section);
+      });
+    });
+
+    // Accept cookies
+    document.getElementById("accept-cookies").addEventListener("click", () => {
+      document.cookie = "cookieConsent=true; max-age=31536000";
+      document.cookie = "preferredLanguage=English; max-age=31536000";
+      document.getElementById("cookie-consent").classList.add("hidden");
     });
   </script>
 </body>
 </html>
-
